@@ -1,0 +1,14 @@
+/* pages/teacher/home/index.wxss */
+.nav-btn{
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #ff5722;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 80rpx;
+  color: #ffffff;
+}
+.nav-btn-main{
+  padding: 8rpx;
+}

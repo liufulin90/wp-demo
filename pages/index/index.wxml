@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="goToTeacherHome" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">我是教师</text>
+  </view>
+  <view  bindtap="goToStudentHome" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">我是学生</text>
+  </view>
+  <view>
+    <button bindtap="bindViewTap">Logs</button>
+  </view>
+</view>
