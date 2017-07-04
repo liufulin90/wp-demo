@@ -1,1 +1,2 @@
 /* pages/student/home/index.wxss */
+@import "/wxss/nav.common.wxss";

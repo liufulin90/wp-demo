@@ -48,15 +48,15 @@
   </block>
 </view>
 <!-- 底部导航 -->
-<view class="classname">
+<view class="nav-wrap">
   <block>
-    <text class="nav-btn btn1 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
-    <text class="nav-btn btn2 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
-    <text class="nav-btn btn3 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
-    <text class="nav-btn btn4 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="iconfont icon-scanning nav-btn btn1 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="iconfont icon-account nav-btn btn2 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="iconfont icon-supplierfeatures nav-btn btn3 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="iconfont icon-map nav-btn btn4 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
   </block>
   <block>
-    <text class="nav-btn nav-btn-main {{openMenu ? 'open-menu' : 'close-menu'}}" bindtap="clickNavMain"></text>
+    <text class="iconfont icon-add nav-btn nav-btn-main {{openMenu ? 'open-menu' : 'close-menu'}}" bindtap="clickNavMain"></text>
   </block>
 </view>
 

@@ -5,7 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    openMenu: false
+  },
+  /**
+   * 点击主导航
+   */
+  clickNavMain: function () {
+    var tempOpenM = false;
+    if (this.data.openMenu) {
+      tempOpenM = false;
+    } else {
+      tempOpenM = true;
+    }
+    this.setData({
+      openMenu: tempOpenM
+    })
   },
 
   /**

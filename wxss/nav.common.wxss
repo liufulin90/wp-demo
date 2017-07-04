@@ -1,0 +1,179 @@
+/* wxss/nav.common.wxss 底部导航样式*/
+@import "/fonts/iconfont.wxss";
+.nav-btn{
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #ff5722;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 80rpx;
+  color: #ffffff;
+  position: fixed;
+  bottom: 80rpx;
+  left: calc(50% - 40rpx);
+  font-size: 45rpx;
+  opacity: 0.9;
+}
+.nav-btn-main{
+  padding: 8rpx;
+  bottom: 75rpx;
+  left: calc(50% - 44rpx);
+  font-size: 55rpx;
+  font-weight: bold;
+  opacity: 1;
+}
+
+/*nav-btn-main展开、关闭菜单动画*/
+.nav-btn-main.open-menu{
+  transform: rotate(135deg);
+  animation: navBtnMainAnimationOpen .7s;
+}
+.nav-btn-main.close-menu{
+  transform: rotate(0deg);
+  animation: navBtnMainAnimationClose .5s;
+}
+@keyframes navBtnMainAnimationOpen{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(135deg);}
+}
+@keyframes navBtnMainAnimationClose{
+  from{transform: rotate(135deg);}
+  to{transform: rotate(0deg);}
+}
+/*btn1展开、关闭菜单动画*/
+.btn1.open-menu{
+  display: inline-block;
+  left: calc(50% - 180rpx);
+  animation: btn1AnimationOpen .7s;
+}
+.btn1.close-menu{
+  left: calc(50% - 40rpx);
+  display: inline-block;
+  animation: btn1AnimationClose .5s;
+}
+@keyframes btn1AnimationOpen{
+  from{
+    left: calc(50% - 40rpx);
+    transform: rotate(330deg);
+    opacity: 0.4;
+    }
+  to{
+    left: calc(50% - 180rpx);
+    transform: rotate(0deg);
+    }
+}
+@keyframes btn1AnimationClose{
+  from{left: calc(50% - 180rpx);}
+  to{
+    left: calc(50% - 40rpx);
+    transform: rotate(330deg);
+    opacity: 0.4;
+    }
+}
+/*btn2展开、关闭菜单动画*/
+.btn2.open-menu{
+  display: inline-block;
+  left: calc(50% - 100rpx);
+  bottom: 200rpx;
+  animation: btn2AnimationOpen .7s;
+}
+.btn2.close-menu{
+  left: calc(50% - 40rpx);
+  bottom: 80rpx;
+  display: inline-block;
+  animation: btn2AnimationClose .5s;
+}
+@keyframes btn2AnimationOpen{
+  from{
+    left: calc(50% - 40rpx);
+    bottom: 80rpx;
+    transform: rotate(330deg);
+    opacity: 0.4;
+    }
+  to{
+    left: calc(50% - 100rpx);
+    bottom: 200rpx;
+    transform: rotate(0deg);
+    }
+}
+@keyframes btn2AnimationClose{
+  from{
+    left: calc(50% - 100rpx);
+    bottom: 200rpx;
+    }
+  to{
+    left: calc(50% - 40rpx);
+    bottom: 80rpx;
+    transform: rotate(330deg);
+    opacity: 0.4;
+    }
+}
+/*btn3展开、关闭菜单动画*/
+.btn3.open-menu{
+  display: inline-block;
+  left: calc(50% + 40rpx);
+  bottom: 200rpx;
+  animation: btn3AnimationOpen .7s;
+}
+.btn3.close-menu{
+  left: calc(50% - 40rpx);
+  bottom: 80rpx;
+  display: inline-block;
+  animation: btn3AnimationClose .5s;
+}
+@keyframes btn3AnimationOpen{
+  from{
+    left: calc(50% - 40rpx);
+    bottom: 80rpx;
+    transform: rotate(330deg);
+    opacity: 0.4;
+    }
+  to{
+    left: calc(50% + 40rpx);
+    bottom: 200rpx;
+    transform: rotate(0deg);
+    }
+}
+@keyframes btn3AnimationClose{
+  from{
+    left: calc(50% + 40rpx);
+    bottom: 200rpx;
+    }
+  to{
+    left: calc(50% - 40rpx);
+    bottom: 80rpx;
+    transform: rotate(330deg);
+    opacity: 0.4;
+    }
+}
+/*btn4展开、关闭菜单动画*/
+.btn4.open-menu{
+  display: inline-block;
+  left: calc(50% + 110rpx);
+  animation: btn4AnimationOpen .7s;
+}
+.btn4.close-menu{
+  left: calc(50% - 40rpx);
+  display: inline-block;
+  animation: btn4AnimationClose .5s;
+}
+@keyframes btn4AnimationOpen{
+  from{
+    left: calc(50% - 40rpx);
+    transform: rotate(330deg);
+    opacity: 0.4;
+    }
+  to{
+    left: calc(50% + 110rpx);
+    transform: rotate(0deg);
+    }
+}
+@keyframes btn4AnimationClose{
+  from{left: calc(50% + 110rpx);}
+  to{
+    left: calc(50% - 40rpx);
+    transform: rotate(330deg);
+    opacity: 0.4;
+    }
+}

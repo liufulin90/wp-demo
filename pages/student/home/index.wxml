@@ -1,2 +1,14 @@
 <!--pages/student/home/index.wxml-->
 <text>pages/student/home/index.wxml</text>
+<!-- 底部导航 -->
+<view class="nav-wrap">
+  <block>
+    <text class="iconfont icon-scanning nav-btn btn1 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="iconfont icon-data nav-btn btn2 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="iconfont icon-history nav-btn btn3 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="iconfont icon-map nav-btn btn4 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+  </block>
+  <block>
+    <text class="iconfont icon-add nav-btn nav-btn-main {{openMenu ? 'open-menu' : 'close-menu'}}" bindtap="clickNavMain"></text>
+  </block>
+</view>

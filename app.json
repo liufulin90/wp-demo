@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/teacher/home/index",
     "pages/index/index",
     "pages/logs/logs",
+    "pages/teacher/home/index",
     "pages/student/home/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "奶茶vs咖啡",
     "navigationBarTextStyle": "black"
   }
 }
