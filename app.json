@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/teacher/home/index",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/teacher/home/index",
     "pages/student/home/index"
   ],
   "window": {

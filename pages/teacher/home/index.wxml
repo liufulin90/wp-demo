@@ -1,6 +1,48 @@
 <!--pages/teacher/home/index.wxml-->
 <view class="container">
   <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
+  <text>pages/teacher/home/index.wxml</text>
   <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
     <text class="log-item">{{index + 1}}. {{log}}</text>
   </block>
@@ -8,13 +50,13 @@
 <!-- 底部导航 -->
 <view class="classname">
   <block>
-    <text class="nav-btn">1</text>
-    <text class="nav-btn">1</text>
-    <text class="nav-btn">1</text>
-    <text class="nav-btn">1</text>
+    <text class="nav-btn btn1 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="nav-btn btn2 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="nav-btn btn3 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="nav-btn btn4 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
   </block>
   <block>
-    <text class="nav-btn nav-btn-main">P</text>
+    <text class="nav-btn nav-btn-main {{openMenu ? 'open-menu' : 'close-menu'}}" bindtap="clickNavMain"></text>
   </block>
 </view>
 

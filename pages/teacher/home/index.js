@@ -1,13 +1,27 @@
 // pages/teacher/home/index.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    openMenu: false
   },
-
+  /**
+   * 点击主导航
+   */
+  clickNavMain: function(){
+    var tempOpenM = false;
+    if (this.data.openMenu) {
+      tempOpenM = false;
+    } else {
+      tempOpenM = true;
+    }
+    this.setData({
+      openMenu: tempOpenM
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -19,7 +33,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
   },
 
   /**
