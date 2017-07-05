@@ -16,6 +16,26 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+/**
+ * 网络请求
+ */
+function ajax(options){
+  wx.request({
+    url: options.url,
+    data: options.data,
+    header: {
+      'Content-Type': 'application/json'
+    },
+    success: function (res) {
+      typeof options.success == 'function' && options.success(res);
+    },
+    fail: function (res) {
+      typeof options.fail == 'function' && options.fail(res);
+    }
+  })
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  ajax: ajax
 }

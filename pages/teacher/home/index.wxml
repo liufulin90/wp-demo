@@ -1,51 +1,32 @@
 <!--pages/teacher/home/index.wxml-->
 <view class="container">
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <text>pages/teacher/home/index.wxml</text>
-  <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
+  <swiper 
+    indicator-dots="{{indicatorDots}}"   
+    autoplay="{{autoplay}}"   
+    interval="{{interval}}"   
+    duration="{{duration}}">  
+    <block wx:for="{{imgUrls}}" wx:key="index">  
+        <swiper-item>  
+            <image src="{{item}}" class="slide-image" mode="scaleToFill"/>  
+        </swiper-item>  
+    </block>  
+  </swiper>
+</view>
+<view class="container">
+  <block>
+    <p class="all-stu">当前所有学生</p>
   </block>
+</view>
+<view class="container">
+    <view class="grade-wrap" wx:for="{{grageList}}"  wx:for-item="item" wx:key="gradeId" wx:for-index="i">
+      <view class="grade-title" data-idx="{{item.gradeId}}" bindtap="listAction">{{item.title}}<text class="iconfont icon-more open"></text></view>
+      <view class="grade-body" data-idx="1">
+        <view class="grade-item" wx:for="{{item.students}}" wx:for-item="students" wx:key="stuId">
+          <image src="{{students.photo}}"></image>
+          <text>{{students.name}}</text>
+        </view>
+      </view>
+    </view>
 </view>
 <!-- 底部导航 -->
 <view class="nav-wrap">
