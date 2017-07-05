@@ -1,0 +1,9 @@
+<!--pages/teacher/scan/tcscan.wxml-->
+<view class="container">
+  <view class="scan-btn">
+    <button bindtap="scanTap">扫码</button>
+  </view>
+  <view class="classname">
+      <text>{{scanContent}}</text>
+  </view>
+</view>

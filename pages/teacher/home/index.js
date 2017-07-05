@@ -1,5 +1,6 @@
 // pages/teacher/home/index.js
-var util = require('../../../utils/util.js')
+var util = require('../../../utils/util.js');
+var api = require('../../../utils/api.js');
 Page({
   /**
    * 页面的初始数据
@@ -52,8 +53,24 @@ Page({
             name: '张三'
           }
         ]
+      }, {
+        title: '2018级 - 新媒体运营',
+        gradeId: '2018-12',
+        students: [{
+            stuId: 3,
+            photo: 'http://img15.3lian.com/2015/h1/280/d/5.jpg',
+            name: '张三'
+          }, {
+            stuId: 4,
+            photo: 'http://img15.3lian.com/2015/h1/280/d/3.jpg',
+            name: '张三'
+          }
+        ]
       }
     ],
+    listOpenArr: [],
+    currentOpenItem: '',
+    inArray: util.inArray,
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -74,11 +91,49 @@ Page({
     })
   },
   /**
+   * 点击底部菜单跳转
+   */
+  clickMenu: function(e){
+    var menu = e.target.dataset.menu;
+    var page = '';
+    switch (menu) {
+      case 'scan':
+        page = '../scan/tcscan';
+        break;
+      case 'userinfo':
+        page = '../personal/index';
+        break;
+      case 'adduser':
+        page = '../adduser/adduser';
+        break;
+      case 'map':
+        page = '../map/map';
+        break;
+    }
+    if (page) {
+      wx.navigateTo({
+        url: page
+      })
+    }
+  },
+  /**
    * 点击列表展开
    */
   listAction: function(e) {
     var idx = e.target.dataset.idx;
-    console.log(e)
+    var listOpenArr = this.data.listOpenArr;
+    var indexof = listOpenArr.indexOf(idx);
+    if (indexof != -1) {
+      listOpenArr.splice(indexof, 1);
+    } else {
+      listOpenArr.push(idx);
+    }
+    this.setData({
+      listOpenArr: listOpenArr,
+      currentOpenItem: this.data.currentOpenItem == idx ? '' : idx
+    })
+    
+    console.log(listOpenArr)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -98,12 +153,9 @@ Page({
   onShow: function () {
     var that = this;
     util.ajax({
-      url: 'http://www.linxins.com/interface/getbanners.php',
-      data: {
-        uid: 194
-      },
+      url: api.urls.getTeacherBannerUrl,
+      data: {},
       success: function (res) {
-        console.log(res)
         that.setData({
           imgUrls: res.data.data
         })
@@ -115,7 +167,6 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
   },
 
   /**

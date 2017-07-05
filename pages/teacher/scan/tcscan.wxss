@@ -1,0 +1,4 @@
+/* pages/teacher/scan/tcscan.wxss */
+.scan-btn{
+  margin-top: 100rpx;
+}

@@ -2,6 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
+    "pages/teacher/scan/tcscan",
+    "pages/teacher/personal/index",
+    "pages/teacher/adduser/adduser",
+    "pages/teacher/map/map",
     "pages/teacher/home/index",
     "pages/student/home/index"
   ],

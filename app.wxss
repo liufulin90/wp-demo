@@ -18,3 +18,14 @@ swiper{
 swiper swiper-item image{
   width: 100%;
 }
+
+/*过渡效果展开*/
+@keyframes viewAnimationShow{
+  from{display: none;}
+  to{display: block;}
+}
+/*过渡效果隐藏*/
+@keyframes viewAnimationHide{
+  from{display: block;}
+  to{display: none;}
+}

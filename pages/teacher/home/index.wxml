@@ -18,9 +18,11 @@
   </block>
 </view>
 <view class="container">
-    <view class="grade-wrap" wx:for="{{grageList}}"  wx:for-item="item" wx:key="gradeId" wx:for-index="i">
-      <view class="grade-title" data-idx="{{item.gradeId}}" bindtap="listAction">{{item.title}}<text class="iconfont icon-more open"></text></view>
-      <view class="grade-body" data-idx="1">
+    <view class="grade-wrap" wx:for="{{grageList}}"  wx:for-item="item" wx:key="gradeId" wx:for-index="gradeId">
+      <view class="grade-title" data-idx="{{item.gradeId}}" bindtap="listAction">{{item.title}}
+        <text class="iconfont icon-more {{currentOpenItem == item.gradeId ? 'open' : ''}}"></text>
+      </view>
+      <view class="grade-body {{currentOpenItem == item.gradeId ? 'showitem' : 'hideitem'}}" data-idx="{{item.gradeId}}">
         <view class="grade-item" wx:for="{{item.students}}" wx:for-item="students" wx:key="stuId">
           <image src="{{students.photo}}"></image>
           <text>{{students.name}}</text>
@@ -31,10 +33,10 @@
 <!-- 底部导航 -->
 <view class="nav-wrap">
   <block>
-    <text class="iconfont icon-scanning nav-btn btn1 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
-    <text class="iconfont icon-account nav-btn btn2 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
-    <text class="iconfont icon-supplierfeatures nav-btn btn3 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
-    <text class="iconfont icon-map nav-btn btn4 {{openMenu ? 'open-menu' : 'close-menu'}}"></text>
+    <text class="iconfont icon-scanning nav-btn btn1 {{openMenu ? 'open-menu' : 'close-menu'}}" data-menu="scan" bindtap="clickMenu"></text>
+    <text class="iconfont icon-account nav-btn btn2 {{openMenu ? 'open-menu' : 'close-menu'}}" data-menu="userinfo" bindtap="clickMenu"></text>
+    <text class="iconfont icon-supplierfeatures nav-btn btn3 {{openMenu ? 'open-menu' : 'close-menu'}}" data-menu="adduser" bindtap="clickMenu"></text>
+    <text class="iconfont icon-map nav-btn btn4 {{openMenu ? 'open-menu' : 'close-menu'}}" data-menu="map" bindtap="clickMenu"></text>
   </block>
   <block>
     <text class="iconfont icon-add nav-btn nav-btn-main {{openMenu ? 'open-menu' : 'close-menu'}}" bindtap="clickNavMain"></text>

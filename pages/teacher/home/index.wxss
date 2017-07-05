@@ -53,3 +53,10 @@
 .grade-wrap .grade-body .grade-item text{
   display: block;
 }
+
+.hideitem{
+  height: 0;
+  overflow: hidden;
+}
+.showitem{
+}

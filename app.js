@@ -1,4 +1,5 @@
 //app.js
+var util = require('./utils/util.js')
 App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据
@@ -24,7 +25,15 @@ App({
       })
     }
   },
+  getAccessToken: () => {
+    util.getAccessToken({
+      success: () => {
+        this.globalData.accessToken = res.data
+      }
+    })
+  },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    accessToken: null
   }
 })
