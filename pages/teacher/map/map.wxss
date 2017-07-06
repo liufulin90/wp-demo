@@ -1,1 +1,20 @@
 /* pages/teacher/map/map.wxss */
+.form-wrap,.form-group{
+  display: block;
+  width: 100%;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  margin: 25rpx 0;
+}
+.form-group .control-label{
+  text-align: right;
+}
+.picker{
+  width: 84%;
+  height: 50rpx;
+  border:1px solid #e5e5e5;
+  border-radius:8rpx;
+  padding:5rpx 10rpx;
+}

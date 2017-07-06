@@ -1,3 +1,60 @@
 <!--pages/teacher/map/map.wxml-->
-<text>pages/teacher/map/map.wxml</text>
-<canvas canvas-id="myCanvas" style="border: 1px solid; width: 300rpx;height: 300rpx"/>
+<view class="container">
+  <view class="form-wrap">
+    <view class="form-group">
+      <label for="" class="col-xs-3 control-label">年级:</label>
+      <view class="col-xs-9">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form-group">
+      <label for="" class="col-xs-3 control-label">班级:</label>
+      <view class="col-xs-9">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form-group">
+      <label for="" class="col-xs-3 control-label">课程:</label>
+      <view class="col-xs-9">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form-group">
+      <label for="inputPassword3" class="col-xs-3 control-label">上课时间:</label>
+      <view class="col-xs-9">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" />
+      </view>
+    </view>
+    <view class="form-group">
+      <label for="inputPassword3" class="col-xs-3 control-label">签到范围:</label>
+      <view class="col-xs-9">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" />
+      </view>
+    </view>
+    <view class="form-group">
+      <label for="inputPassword3" class="col-xs-3 control-label">旷课时长:</label>
+      <view class="col-xs-9">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" />
+      </view>
+    </view>
+    <view class="form-group">
+      <view class="col-xs-offset-3 col-xs-4">
+        <button type="submit" class="btn btn-default">发起签到</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
