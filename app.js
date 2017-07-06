@@ -7,6 +7,9 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
   },
+  /**
+   * 获取登录认证用户
+   */
   getUserInfo:function(cb){
     var that = this
     if(this.globalData.userInfo){
@@ -25,12 +28,22 @@ App({
       })
     }
   },
-  getAccessToken: () => {
-    util.getAccessToken({
-      success: () => {
-        this.globalData.accessToken = res.data
-      }
-    })
+  /**
+   * 应用获得access token（调用远程接口获取并设定至app全局）
+   */
+  getAccessToken: function(cb) {
+    var that = this;
+    if (this.globalData.accessToken) {
+      typeof cb == "function" && cb(this.globalData.accessToken)
+    } else {
+      //获取access token
+      util.getAccessToken({
+        success: (res) => {
+          that.globalData.accessToken = res.data.access_token
+          typeof cb == "function" && cb(that.globalData.accessToken)
+        }
+      })
+    }
   },
   globalData:{
     userInfo:null,

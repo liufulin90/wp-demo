@@ -1,6 +1,7 @@
 // pages/teacher/map/map.js
 import QrCode from '../../../utils/qr.js';
 var util = require('../../../utils/util.js');
+var app = getApp()
 
 Page({
 
@@ -14,7 +15,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    app.getAccessToken((token) => {
+      console.log(token)
+    });
+    
   },
 
   /**

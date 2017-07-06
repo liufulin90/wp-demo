@@ -63,18 +63,46 @@ const getAccessToken = (options) => {
   ajax({
     url:'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxa7d34effcf814443&secret=0076f7509fd8913259543e034035c49e',
     success:(res) => {
-      console.log(res)
       typeof options.success == 'function' && options.success(res)
     },
     fail: function (res) {
       typeof options.fail == 'function' && options.fail(res);
     }
-  })
+  });
 }
-
+/**
+ * 获取小程序 码
+ */
+const getWpCode = (options) => {
+  ajax({
+    url: `https://api.weixin.qq.com/wxa/getwxacode?access_token=${options.token}`,
+    success: (res) => {
+      typeof options.success == 'function' && options.success(res)
+    },
+    fail: function (res) {
+      typeof options.fail == 'function' && options.fail(res);
+    }
+  });
+}
+/**
+ * 获取小程序二维码
+ */
+const getWpQr = (options) => {
+  ajax({
+    url: `https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token=${options.token}`,
+    success: (res) => {
+      typeof options.success == 'function' && options.success(res)
+    },
+    fail: function (res) {
+      typeof options.fail == 'function' && options.fail(res);
+    }
+  });
+}
 module.exports = {
   formatTime: formatTime,
   ajax,
   inArray,
-  getAccessToken
+  getAccessToken,
+  getWpQr,
+  getWpCode
 }
