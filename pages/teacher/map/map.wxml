@@ -4,9 +4,9 @@
     <view class="form-group">
       <label for="" class="col-xs-3 control-label">年级:</label>
       <view class="col-xs-9">
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-          <view class="picker">
-            {{array[index]}}
+        <picker bindchange="bindPickerChange" id="grade" value="{{gradeIndex}}" range="{{grade}}">
+          <view class="picker iconfont select">
+            {{grade[gradeIndex]}}
           </view>
         </picker>
       </view>
@@ -14,9 +14,9 @@
     <view class="form-group">
       <label for="" class="col-xs-3 control-label">班级:</label>
       <view class="col-xs-9">
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-          <view class="picker">
-            {{array[index]}}
+        <picker bindchange="bindPickerChange" id="classes" value="{{classesIndex}}" range="{{classes}}">
+          <view class="picker iconfont select">
+            {{classes[classesIndex]}}
           </view>
         </picker>
       </view>
@@ -24,9 +24,9 @@
     <view class="form-group">
       <label for="" class="col-xs-3 control-label">课程:</label>
       <view class="col-xs-9">
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-          <view class="picker">
-            {{array[index]}}
+        <picker bindchange="bindPickerChange" id="course" value="{{courseIndex}}" range="{{course}}">
+          <view class="picker iconfont select">
+            {{course[courseIndex]}}
           </view>
         </picker>
       </view>
@@ -34,25 +34,71 @@
     <view class="form-group">
       <label for="inputPassword3" class="col-xs-3 control-label">上课时间:</label>
       <view class="col-xs-9">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" />
+        <picker mode="time" value="{{time}}" start="06:00" end="22:00" bindchange="listenerTimePickerSelected">
+          <view class="picker iconfont time">
+            {{time}}
+          </view>
+        </picker>
       </view>
     </view>
     <view class="form-group">
       <label for="inputPassword3" class="col-xs-3 control-label">签到范围:</label>
       <view class="col-xs-9">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" />
+        <view class="col-xs-5" style="padding-left: 0;">
+          <picker bindchange="bindPickerChange" id="signTime" value="{{signTimeIndex}}" range="{{signTime}}">
+            <view class="picker iconfont select">
+              {{signTime[signTimeIndex]}}
+            </view>
+          </picker>
+        </view>
+        <view class="col-xs-5">
+          <picker bindchange="bindPickerChange" id="signPlace" value="{{signPlaceIndex}}" range="{{signPlace}}">
+            <view class="picker iconfont select">
+              {{signPlace[signPlaceIndex]}}
+            </view>
+          </picker>
+        </view>
       </view>
     </view>
     <view class="form-group">
       <label for="inputPassword3" class="col-xs-3 control-label">旷课时长:</label>
       <view class="col-xs-9">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" />
+        <picker bindchange="bindPickerChange" id="truancy" value="{{truancyIndex}}" range="{{truancy}}">
+          <view class="picker iconfont select">
+            {{truancy[truancyIndex]}}
+          </view>
+        </picker>
       </view>
     </view>
     <view class="form-group">
       <view class="col-xs-offset-3 col-xs-4">
-        <button type="submit" class="btn btn-default">发起签到</button>
+        <button type="submit" bindtap="signSubmit" class="btn btn-default sign-btn">发起签到</button>
       </view>
+    </view>
+  </view>
+  <!--已签到，未签到 -->
+  <view class="tab-wrap">
+    <view class="tab"> 
+      <view class="tab-head" bindtap="tabFun"> 
+        <view class="subtab {{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">已签到</view> 
+        <view class="subtab {{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1">未签到</view> 
+        <view class="iconfont refrash" bindtap="refrashFun">共(38)人</view>
+      </view> 
+      
+      <view class="tab-body"> 
+        <view class="body-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+          <view class="grade-item" wx:for="{{signList.okList}}" wx:for-item="okList" wx:key="stuId">
+            <image src="{{okList.photo}}"></image>
+            <text>{{okList.name}}</text>
+          </view>
+        </view> 
+        <view class="body-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+          <view class="grade-item" wx:for="{{signList.notList}}" wx:for-item="notList" wx:key="stuId">
+            <image src="{{notList.photo}}"></image>
+            <text>{{notList.name}}</text>
+          </view>
+        </view> 
+      </view> 
     </view>
   </view>
 </view>

@@ -30,3 +30,25 @@ swiper swiper-item image{
   from{display: block;}
   to{display: none;}
 }
+
+/*select 选择框样式*/
+.picker{
+  width: 84%;
+  height: 50rpx;
+  border:1px solid #e5e5e5;
+  border-radius:8rpx;
+  padding:5rpx 10rpx;
+  position: relative;
+}
+.select:before {
+  content: "\e6a6"; 
+  position: absolute;
+  right: 10rpx;
+  top: 15rpx;
+}
+.time:before {
+  content: "\e6bf"; 
+  position: absolute;
+  right: 10rpx;
+  top: 15rpx;
+}
